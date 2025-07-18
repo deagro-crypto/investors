@@ -343,3 +343,59 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Mobile menu functionality
+function initMobileMenu() {
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  if (!mobileMenuToggle || !mobileNav) return;
+  
+  // Toggle mobile menu
+  mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (mobileNav.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close menu when clicking on links
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenuToggle.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+      mobileMenuToggle.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize multi-step form
+  initMultiStepForm();
+  
+  // Initialize FAQ accordion
+  initFaqAccordion();
+  
+  // Initialize header scroll effect
+  initHeaderScroll();
+  
+  // Initialize animations
+  initAnimations();
+  
+  // Initialize mobile menu
+  initMobileMenu(); // ← ADICIONE ESTA LINHA
+});
