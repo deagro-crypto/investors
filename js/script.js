@@ -103,8 +103,8 @@ function initMultiStepForm() {
         form.innerHTML = `
           <div class="form-success">
             <div class="success-icon">✓</div>
-            <h3>Thank You for Your Interest!</h3>
-            <p>Your registration has been successfully submitted. One of our investment advisors will contact you within 24 hours to discuss the next steps.</p>
+            <h3>Thank You for Your Interest in DeAgro!</h3>
+            <p>Your registration has been successfully submitted and our team will contact you soon to discuss the next steps.</p>
             <p class="success-reference">Your reference number: <strong>DEA-${generateReferenceNumber()}</strong></p>
           </div>
         `;
