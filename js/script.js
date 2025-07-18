@@ -414,3 +414,22 @@ function configureExternalLinks() {
     }
   });
 }
+
+// Debug Mobile - adicione temporariamente
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(() => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    console.log('Mobile Debug: Screen width:', window.innerWidth);
+    console.log('Mobile Debug: User agent:', navigator.userAgent);
+    console.log('Mobile Debug: FAQ items found:', faqItems.length);
+    
+    faqItems.forEach((item, index) => {
+      const question = item.querySelector('.faq-question');
+      if (question) {
+        question.addEventListener('touchstart', () => {
+          console.log('Mobile Debug: Touch detected on item', index);
+        });
+      }
+    });
+  }, 2000);
+});
