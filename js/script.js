@@ -383,47 +383,34 @@ function initMobileMenu() {
   });
 }
 
+// Versão limpa e definitiva - substitua todo o final do script.js
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize multi-step form
+  // Initialize all components
   initMultiStepForm();
-  
-  // Initialize FAQ accordion
   initFaqAccordion();
-  
-  // Initialize header scroll effect
   initHeaderScroll();
-  
-  // Initialize animations
   initAnimations();
+  initMobileMenu();
   
-  // Initialize mobile menu
-  initMobileMenu(); // ← ADICIONE ESTA LINHA
+  // Configure external links
+  configureExternalLinks();
 });
 
-// Debug FAQ - Adicione temporariamente
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('FAQ Debug: DOM loaded');
+// Function to configure external links
+function configureExternalLinks() {
+  const links = document.querySelectorAll('a[href]');
   
-  setTimeout(() => {
-    const faqItems = document.querySelectorAll('.faq-item');
-    console.log('FAQ Debug: Found', faqItems.length, 'FAQ items');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
     
-    faqItems.forEach((item, index) => {
-      const question = item.querySelector('.faq-question');
-      if (question) {
-        console.log('FAQ Debug: Adding listener to item', index);
-        question.addEventListener('click', () => {
-          console.log('FAQ Debug: Clicked item', index);
-          item.classList.toggle('active');
-          
-          // Close other items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('active')) {
-              otherItem.classList.remove('active');
-            }
-          });
-        });
-      }
-    });
-  }, 100);
-});
+    if (href && (href.startsWith('http://' ) || href.startsWith('https://' )) && !href.includes(window.location.hostname)) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener');
+    }
+    
+    if (href && href.startsWith('mailto:')) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener');
+    }
+  });
+}
