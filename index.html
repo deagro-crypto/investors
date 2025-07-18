@@ -39,25 +39,44 @@
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo-container">
-        <a href="#top" class="logo-link" title="Voltar ao início">
+  <header class="header" id="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-container">
+        <a href="#" class="logo-link">
           <img src="assets/Logo/Property 1=DeAgro_Logo_FullEmr.png" alt="DeAgro Logo" class="logo">
         </a>
       </div>
-        <nav class="nav-links">
-          <a href="#value-proposition">Why DeAgro</a>
-          <a href="#sector-tokens">Opportunities</a>
-          <a href="#how-it-works">Investing</a>
-          <a href="#investor-form">Register</a>
-          <a href="#faq-section">FAQ</a>
-          <a href="mailto:deagro@deagro.io" title="Send us an email">Contact Us</a>
-        </nav>
-      </div>
+      
+      <!-- Menu Desktop -->
+      <nav class="nav-links desktop-nav">
+        <a href="#value-proposition">Why DeAgro</a>
+        <a href="#sector-tokens">Opportunities</a>
+        <a href="#how-it-works">Investing</a>
+        <a href="#investor-form">Register</a>
+        <a href="#faq-section">FAQ</a>
+        <a href="mailto:deagro@deagro.io" title="Send us an email">Contact Us</a>
+      </nav>
+      
+      <!-- Botão Menu Mobile -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-  </header>
+    
+    <!-- Menu Mobile -->
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="#value-proposition" class="mobile-nav-link">Why DeAgro</a>
+      <a href="#sector-tokens" class="mobile-nav-link">Opportunities</a>
+      <a href="#how-it-works" class="mobile-nav-link">Investing</a>
+      <a href="#investor-form" class="mobile-nav-link">Register</a>
+      <a href="#faq-section" class="mobile-nav-link">FAQ</a>
+      <a href="mailto:deagro@deagro.io" class="mobile-nav-link" title="Send us an email">Contact Us</a>
+    </nav>
+  </div>
+</header>
 
   <section class="hero">
     <div class="container">
