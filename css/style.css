@@ -198,10 +198,18 @@ section {
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
-  padding: 8rem 0 5rem;
+  padding: var(--spacing-xxl) 0;
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
   color: var(--white);
   overflow: hidden;
+}
+
+/* Ajuste específico para mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 12rem; /* Aumenta o espaço do topo */
+    padding-bottom: var(--spacing-xxl);
+  }
 }
 
 .hero-content {
