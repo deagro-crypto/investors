@@ -399,3 +399,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize mobile menu
   initMobileMenu(); // ← ADICIONE ESTA LINHA
 });
+
+// Debug FAQ - Adicione temporariamente
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('FAQ Debug: DOM loaded');
+  
+  setTimeout(() => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    console.log('FAQ Debug: Found', faqItems.length, 'FAQ items');
+    
+    faqItems.forEach((item, index) => {
+      const question = item.querySelector('.faq-question');
+      if (question) {
+        console.log('FAQ Debug: Adding listener to item', index);
+        question.addEventListener('click', () => {
+          console.log('FAQ Debug: Clicked item', index);
+          item.classList.toggle('active');
+          
+          // Close other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+        });
+      }
+    });
+  }, 100);
+});
