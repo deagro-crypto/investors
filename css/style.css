@@ -837,26 +837,6 @@ textarea {
   margin-top: var(--spacing-xxl);
 }
 
-/* Mobile FAQ Fixes */
-@media (max-width: 768px) {
-  .faq-question {
-    cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .faq-item {
-    touch-action: manipulation;
-  }
-  
-  .faq-toggle {
-    pointer-events: none; /* Evita conflitos com o toggle */
-  }
-}
-
 /* ===== FOOTER ===== */
 .footer {
   background-color: var(--primary-dark);
