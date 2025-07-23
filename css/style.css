@@ -204,14 +204,6 @@ section {
   overflow: hidden;
 }
 
-/* Ajuste específico para mobile */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 12rem; /* Aumenta o espaço do topo */
-    padding-bottom: var(--spacing-xxl);
-  }
-}
-
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1224,7 +1216,7 @@ textarea {
   }
   
   .hero {
-    padding: 6rem 0 3rem;
+    padding: 12rem 0 3rem;
   }
   
   .hero h1 {
@@ -1396,10 +1388,7 @@ textarea {
   .mobile-menu-toggle {
     display: flex;
   }
-  
-  .hero {
-    padding-top: 10rem; /* Espaço extra para o header fixo */
-  }
+
 }
 
 
